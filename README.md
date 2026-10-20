@@ -78,9 +78,7 @@ Focado em escrever código limpo e seguro (mitigação de SQL Injection, CSRF e 
 ```bash
 deploy_curriculo/
 │
-├── index.html              # Página web do currículo/portfólio online (HTML5 semântico, SEO/GEO)
-├── style.css               # Estilos modernos, Dark/Light mode, responsividade e layout para PDF
-├── script.js               # Lógica interativa (troca de temas, filtros de habilidades)
+├── index.html              # Página web do currículo/portfólio online (HTML5 semântico)
 ├── curriculo_roberto.md     # Documento completo formatado em Markdown para texto e ATS
 └── README.md               # Apresentação do repositório no GitHub com badges
 ```
