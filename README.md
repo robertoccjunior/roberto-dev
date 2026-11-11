@@ -1,28 +1,26 @@
 <div align="center">
 
 # 👨‍💻 Roberto Carlos Correa Junior
-### **Desenvolvedor Full Stack Júnior | Python & Django**
+### **Desenvolvedor Back-End & Full Stack | Python, Automações & Docker**
 *Araraquara, São Paulo, Brasil*
 
 <p align="center">
   <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Python" />
   <img src="https://img.shields.io/badge/Django-092E20?style=for-the-badge&logo=django&logoColor=white" alt="Django" />
   <img src="https://img.shields.io/badge/Flask-000000?style=for-the-badge&logo=flask&logoColor=white" alt="Flask" />
-  <img src="https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=openjdk&logoColor=white" alt="Java" />
+  <img src="https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white" alt="Docker" />
   <img src="https://img.shields.io/badge/MySQL-4479A1?style=for-the-badge&logo=mysql&logoColor=white" alt="MySQL" />
   <img src="https://img.shields.io/badge/SQLite-003B57?style=for-the-badge&logo=sqlite&logoColor=white" alt="SQLite" />
-  <img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white" alt="HTML5" />
-  <img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white" alt="CSS3" />
-  <img src="https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white" alt="Tailwind CSS" />
-  <img src="https://img.shields.io/badge/GIT-E44C30?style=for-the-badge&logo=git&logoColor=white" alt="Git" />
   <img src="https://img.shields.io/badge/Linux-FCC624?style=for-the-badge&logo=linux&logoColor=black" alt="Linux" />
+  <img src="https://img.shields.io/badge/GIT-E44C30?style=for-the-badge&logo=git&logoColor=white" alt="Git" />
+  <img src="https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white" alt="Tailwind CSS" />
 </p>
 
 <p align="center">
   <a href="#-sobre-mim">Sobre Mim</a> •
-  <a href="#-stack-tecnológica">Stack Tecnológica</a> •
-  <a href="#-engenharia--qualidade">Engenharia & Qualidade</a> •
-  <a href="#-estrutura-deste-repositório">Estrutura</a> •
+  <a href="#-stack-e-competências">Stack</a> •
+  <a href="#-projetos-em-destaque">Projetos</a> •
+  <a href="#-engenharia-e-boas-práticas">Engenharia</a> •
   <a href="#-contato">Contato</a>
 </p>
 
@@ -32,44 +30,53 @@
 
 ## 📌 Sobre Mim
 
-Desenvolvedor de software com visão de ponta a ponta do **Ciclo de Vida de Desenvolvimento de Software (SDLC)**. Capacitado na modelagem relacional de bancos de dados, desenvolvimento de regras de negócio e APIs no back-end com **Python (Django / Flask)**, e construção de interfaces web responsivas e acessíveis (Mobile-First com CSS e Tailwind).
+Desenvolvedor com foco em desenvolvimento back-end, automações inteligentes de rotinas e construção de aplicações web. Minha atuação é centrada no ecossistema **Python (Django, Flask e scripts de automação)**, combinando persistência em **bancos de dados relacionais (MySQL e SQLite)** com ambientes padronizados através do **Docker e Docker Compose**.
 
-Focado em escrever código limpo e seguro (mitigação de SQL Injection, CSRF e conformidade com a LGPD), além de aplicar práticas modernas de **SEO técnico, GEO (Generative Engine Optimization) e validação de performance/acessibilidade via Google Lighthouse e padrões W3C**.
+Gosto de transformar processos manuais em rotinas automatizadas eficientes (bots de monitoramento, coleta de dados e integração de APIs), prezando sempre por código organizado, logs claros, tratamento de exceções e segurança básica contra vulnerabilidades da web (SQL Injection e CSRF).
 
 ---
 
-## 🚀 Stack Tecnológica
+## 🚀 Stack e Competências
 
-### 🔹 Back-End & Linguagens
-* **Python:** Desenvolvimento web com **Django** (padrão MVT, Django ORM, rotas, views e templates) e **Flask** (microframework para APIs e serviços ágeis).
-* **Java:** Fundamentos de Programação Orientada a Objetos (POO), classes, herança e encapsulamento.
-* **Boas Práticas:** Tratamento estruturado de erros e exceções (`try/except`, `try/catch`), emissão e análise de logs, uso de ambientes virtuais (`venv`).
+### 🔹 Back-End & Automação
+* **Python:** Criação de web apps (Django MVT, Django ORM), APIs RESTful (Flask) e scripts para tarefas automatizadas.
+* **Bots & Automação:** Automação de rotinas em segundo plano, consumo de APIs REST, webhooks e requisições HTTP (`requests`).
+* **Java:** Fundamentos de Programação Orientada a Objetos (POO).
+* **Boas Práticas:** Tratamento estruturado de erros (`try/except`), logs e isolamento de ambientes com `venv`.
+
+### 🔹 DevOps & Infraestrutura
+* **Docker & Docker Compose:** Criação de `Dockerfile`, isolamento de serviços em containers, persistência com volumes e orquestração de ambiente de desenvolvimento local (Web + MySQL).
+* **Linux & Terminal:** Navegação por linha de comando em Bash, scripts simples de automação e manipulação de arquivos.
+* **Versionamento:** Git e GitHub (branches, commits padronizados, pull requests e deploy no GitHub Pages).
 
 ### 🔹 Bancos de Dados & Modelagem
-* **Modelagem:** Elaboração de MER / DER (Modelo Entidade-Relacionamento), integridade referencial, chaves primárias (`PK`), estrangeiras (`FK`) e cardinalidades (1:1, 1:N, N:N).
-* **SGBDs:** **MySQL** para produção e modelagem relacional; **SQLite** para desenvolvimento rápido e testes locais.
+* **Modelagem:** Elaboração de MER / DER (Modelo Entidade-Relacionamento), integridade referencial (chaves primárias e estrangeiras) e cardinalidades.
+* **SGBDs:** **MySQL** para produção e modelagem relacional estruturada; **SQLite** para microsserviços e testes rápidos.
 
-### 🔹 Front-End & UX/UI
-* **Construção:** HTML5 semântico, CSS3 moderno, **Tailwind CSS** (design utility-first ágil), layouts fluidos e abordagem **Mobile-First**.
-* **Prototipagem:** Criação de wireframes e fluxo de usuário no **Figma**, visando usabilidade e acessibilidade.
-
-### 🔹 Segurança & Compliance
-* Proteção ativa contra **SQL Injection** e **CSRF**.
-* Autenticação segura, hash de senhas e controle de acesso baseado em papéis (**RBAC**).
-* Noções e aplicação das diretrizes da **LGPD** (privacidade e proteção de dados).
+### 🔹 Front-End & Interfaces
+* **Construção:** HTML5 semântico, CSS3 moderno, **Tailwind CSS** e JavaScript Vanilla (ES6+).
+* **UX/UI:** Abordagem Mobile-First, foco em acessibilidade e prototipagem no Figma.
 
 ---
 
-## 🏆 Engenharia, Qualidade & Otimização
+## 📁 Projetos em Destaque
 
-| Pilar | Tecnologias / Metodologias |
+1. **Bot de Automação & Coleta de Dados (Python & Docker):** Rotina automatizada para monitoramento e envio de notificações em tempo real, empacotada em container Docker independente.
+2. **Sistema Web de Gestão & Painel (Django, Docker & MySQL):** CRUD corporativo com controle de acesso baseado em papéis (RBAC), interface responsiva com Tailwind e ambiente 100% conteinerizado.
+3. **API RESTful de Serviços (Flask & SQLite):** Microserviço back-end leve para consumo de dados estruturados com validação de schemas JSON.
+4. **Portfólio & Terminal Web Interativo (HTML5, Modern CSS, JS):** Aplicação estática de alta performance para o GitHub Pages com modo escuro/claro nativo e 100/100 no Lighthouse.
+
+---
+
+## 🏆 Engenharia e Boas Práticas
+
+| Pilar | Abordagem |
 | :--- | :--- |
-| **Padrões & Acessibilidade** | Código validado conforme diretrizes do **W3C** |
-| **Auditoria & Performance** | Métricas Core Web Vitals e diagnóstico via **Google Lighthouse** |
-| **Mecanismos de Busca** | **SEO Técnico** e **GEO** (*Generative Engine Optimization* com dados Schema.org) |
-| **Gestão & Processos** | Metodologias Ágeis (**Scrum** - sprints, backlog, cerimônias), Requisitos Funcionais e Casos de Uso (UML) |
-| **Controle de Versão** | **Git** e **GitHub** (fluxos de trabalho com branches, commits semânticos e pull requests) |
-| **Infraestrutura** | Terminal (**Bash / PowerShell**), comandos básicos em ambiente **Linux** e apontamento de Domínios/DNS |
+| **Ambientes Padronizados** | **Docker & Docker Compose** garantindo paridade entre desenvolvimento e produção |
+| **Automação de Processos** | Scripts em Python para eliminar tarefas manuais e monitorar dados |
+| **Segurança Web** | Mitigação de SQL Injection via queries parametrizadas/ORM e proteção CSRF |
+| **Acessibilidade & Padrões** | Código semântico validado conforme diretrizes do W3C |
+| **Metodologias Ágeis** | Trabalho em equipe com cerimônias do Scrum (sprints, dailies e backlog) |
 
 ---
 
@@ -78,9 +85,12 @@ Focado em escrever código limpo e seguro (mitigação de SQL Injection, CSRF e 
 ```bash
 deploy_curriculo/
 │
-├── index.html              # Página web do currículo/portfólio online (HTML5 semântico)
-├── curriculo_roberto.md     # Documento completo formatado em Markdown para texto e ATS
-└── README.md               # Apresentação do repositório no GitHub com badges
+├── index.html              # Portfólio e currículo online interativo (HTML5 semântico)
+├── assets/
+│   ├── css/style.css       # Design system autoral (Dark/Light mode, Glassmorphism, Print CSS)
+│   └── js/main.js          # Simulador de bot, navegação acessível e alternador de tema
+├── curriculo_roberto.md     # Currículo completo formatado para texto e ATS
+└── README.md               # Apresentação do perfil e projetos no GitHub
 ```
 
 ---
@@ -90,12 +100,10 @@ deploy_curriculo/
 - 📍 **Localização:** Araraquara, SP
 - 🐙 **GitHub:** [github.com/Robertoccj](https://github.com/Robertoccj)
 - 📱 **WhatsApp:** [+55 (16) 99741-9127](https://wa.me/5516997419127)
-- 🎓 **Formação:** Curso Técnico em TI *(Conclusão: Novembro/2026)*
-- ✉️ **E-mail:** *(Adicionar e-mail profissional)*
-- 💼 **LinkedIn:** *(Em criação)*
+- 🎓 **Formação:** Técnico em TI — SENAC Araraquara *(Conclusão prevista: Nov/2026)*
 
 ---
 
 <div align="center">
-  <sub>Desenvolvido com foco em boas práticas, código limpo e padrões de engenharia de software.</sub>
+  <sub>Desenvolvido com foco em lógica, código limpo, automação e padrões de engenharia de software.</sub>
 </div>

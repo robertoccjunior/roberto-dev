@@ -1,48 +1,858 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
-<style>
-  body {
-    background-color: #270303;
-    font-family: 'Roboto', sans-serif;
-    font-size: 16px;
-    color: #333;
-    line-height: 1.6;
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-
-  h1 span {
-    display: block;
-    font-size: 14px;
-    font-weight: normal;
-    color: #212b2c
-  }
-
-  header {
-    background-color: #8a6b6b;
-    padding: 16px;
-  }
-</style>
-
+<html lang="pt-BR" data-theme="dark">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Roberto Carlos Correa Junior</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- SEO Primário -->
+  <title>Roberto Carlos | Desenvolvedor Back-End & Full Stack (Python, Bots & Docker)</title>
+  <meta name="title" content="Roberto Carlos | Desenvolvedor Back-End & Full Stack (Python, Bots & Docker)" />
+  <meta name="description" content="Portfólio técnico de Roberto Carlos Correa Junior. Desenvolvedor focado em Python (Django, Flask), criação de bots e rotinas de automação, Docker e bancos de dados relacionais." />
+  <meta name="keywords" content="Roberto Carlos Correa Junior, Desenvolvedor Python, Automação Python, Bots, Django, Flask, Docker, Docker Compose, MySQL, SQLite, Back-End, Araraquara" />
+  <meta name="author" content="Roberto Carlos Correa Junior" />
+  <meta name="robots" content="index, follow" />
+  <meta name="theme-color" content="#080c14" />
+
+  <!-- Canonical -->
+  <link rel="canonical" href="https://robertoccj.github.io/deploy_curriculo/" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://robertoccj.github.io/deploy_curriculo/" />
+  <meta property="og:title" content="Roberto Carlos | Desenvolvedor Back-End & Automações" />
+  <meta property="og:description" content="Aplicações web robustas com Python (Django/Flask), bots de automação e ambientes conteinerizados com Docker." />
+  <meta property="og:locale" content="pt_BR" />
+
+  <!-- Google Fonts: Space Grotesk + Inter + Fira Code -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700;800&display=swap" rel="stylesheet" />
+
+  <!-- Script Anti-FOUC de Tema -->
+  <script>
+    (function () {
+      try {
+        const savedTheme = localStorage.getItem('theme');
+        const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        if (savedTheme === 'light') {
+          document.documentElement.setAttribute('data-theme', 'light');
+        } else if (savedTheme === 'dark' || systemPrefersDark) {
+          document.documentElement.setAttribute('data-theme', 'dark');
+        }
+      } catch (e) {
+        console.warn('Tema carregado por padrão', e);
+      }
+    })();
+  </script>
+
+  <!-- Schema.org JSON-LD Estruturado -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Roberto Carlos Correa Junior",
+    "jobTitle": "Desenvolvedor Back-End & Full Stack",
+    "url": "https://robertoccj.github.io/deploy_curriculo/",
+    "sameAs": [
+      "https://github.com/Robertoccj"
+    ],
+    "knowsAbout": [
+      "Python",
+      "Automações e Bots",
+      "Django",
+      "Flask",
+      "Docker",
+      "Docker Compose",
+      "MySQL",
+      "SQLite",
+      "APIs RESTful",
+      "Web Scraping",
+      "Linux",
+      "Git"
+    ]
+  }
+  </script>
+
+  <!-- Estilo CSS -->
+  <link rel="stylesheet" href="./assets/css/style.css" />
 </head>
-
 <body>
-  <header>
-    <h1> Roberto Carlos Correa Junior <span> Desenvolvedor Fullstack </span></h1>
-    <nav>
-      <ul>
-        <li><a href="#inicio">Inicio</a></li>
-        <li><a href="#sobre">Sobre mim</a></li>
-        <li><a href="#contato">Contato</a></li>
-      </ul>
-    </nav>
-    <button>Curriculo </button>
-  </header>
-</body>
 
+  <!-- Acessibilidade: Skip Link -->
+  <a href="#conteudo-principal" class="skip-link">Pular para o conteúdo principal</a>
+
+  <!-- Barra Superior de Navegação -->
+  <header class="navbar" role="banner">
+    <div class="container navbar-inner">
+      <a href="#inicio" class="brand" aria-label="Início - Roberto Carlos">
+        <span class="brand-icon">&gt;_</span>
+        <span>Roberto<span class="slash">.dev</span></span>
+      </a>
+
+      <!-- Menu Principal -->
+      <nav role="navigation" aria-label="Navegação do site">
+        <ul id="nav-links" class="nav-links">
+          <li><a href="#inicio" class="nav-item active">Início</a></li>
+          <li><a href="#sobre" class="nav-item">Sobre</a></li>
+          <li><a href="#habilidades" class="nav-item">Competências</a></li>
+          <li><a href="#projetos" class="nav-item">Projetos</a></li>
+          <li><a href="#diferenciais" class="nav-item">Pilares</a></li>
+          <li><a href="#contato" class="nav-item">Contato</a></li>
+        </ul>
+      </nav>
+
+      <!-- Botões de Ação do Topo -->
+      <div class="nav-tools">
+        <!-- Salvar / Imprimir PDF -->
+        <button type="button" class="btn btn-outline btn-print" aria-label="Imprimir currículo ou gerar PDF" title="Salvar PDF do currículo">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <polyline points="6 9 6 2 18 2 18 9"></polyline>
+            <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path>
+            <rect x="6" y="14" width="12" height="8"></rect>
+          </svg>
+          <span style="font-size: 0.85rem;">Currículo PDF</span>
+        </button>
+
+        <!-- Alternar Tema Claro / Escuro -->
+        <button type="button" id="theme-toggle" class="tool-btn" aria-label="Alternar tema de cores" title="Alternar tema">
+          <svg class="theme-icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3"></line>
+            <line x1="12" y1="21" x2="12" y2="23"></line>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+            <line x1="1" y1="12" x2="3" y2="12"></line>
+            <line x1="21" y1="12" x2="23" y2="12"></line>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+          </svg>
+          <svg class="theme-icon-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+          </svg>
+        </button>
+
+        <!-- Menu Hambúrguer Mobile -->
+        <button type="button" id="menu-btn" class="menu-btn" aria-label="Abrir menu" aria-expanded="false" aria-controls="nav-links">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Conteúdo Principal -->
+  <main id="conteudo-principal">
+
+    <!-- 1. Hero Section com Simulador de Automação & Trilhas de Circuito -->
+    <section id="inicio" class="hero-section section" aria-labelledby="hero-title">
+
+      <!-- Trilhas de Circuito Eletrônico / Neon (SVG Animado) -->
+      <svg class="circuit-canvas" viewBox="0 0 1200 650" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" aria-hidden="true">
+        <!-- Barramento 1: Do Interruptor para o Terminal Bot -->
+        <path class="circuit-wire" d="M 460 38 L 680 38 L 710 68 L 1160 68 L 1160 320 L 1050 320" />
+        <path class="circuit-pulse pulse-1" d="M 460 38 L 680 38 L 710 68 L 1160 68 L 1160 320 L 1050 320" />
+
+        <!-- Barramento 2: Do Título para a Base do Terminal -->
+        <path class="circuit-wire wire-cyan" d="M 80 38 L 25 38 L 25 290 L 180 290 L 210 320 L 530 320 L 560 350 L 630 350" />
+        <path class="circuit-pulse pulse-2" d="M 80 38 L 25 38 L 25 290 L 180 290 L 210 320 L 530 320 L 560 350 L 630 350" />
+
+        <!-- Barramento 3: Descendo para o Rodapé e Seções de Código -->
+        <path class="circuit-wire wire-purple" d="M 680 38 L 680 180 L 650 210 L 650 620 L 750 620" />
+        <path class="circuit-pulse pulse-3" d="M 680 38 L 680 180 L 650 210 L 650 620 L 750 620" />
+
+        <!-- Solder Pads / Ilhas de Conexão -->
+        <circle class="circuit-pad" cx="460" cy="38" r="4.5" />
+        <circle class="circuit-pad pad-cyan" cx="680" cy="38" r="5" />
+        <circle class="circuit-pad" cx="710" cy="68" r="4" />
+        <circle class="circuit-pad pad-cyan" cx="1160" cy="68" r="5" />
+        <circle class="circuit-pad" cx="1050" cy="320" r="4" />
+        <circle class="circuit-pad" cx="25" cy="38" r="4.5" />
+        <circle class="circuit-pad pad-cyan" cx="25" cy="290" r="5" />
+        <circle class="circuit-pad pad-cyan" cx="630" cy="350" r="4.5" />
+        <circle class="circuit-pad pad-purple" cx="680" cy="180" r="4" />
+        <circle class="circuit-pad pad-purple" cx="750" cy="620" r="5" />
+      </svg>
+
+      <div class="container hero-layout">
+        <div>
+          <!-- Linha de Status + Interruptor Tátil -->
+          <div class="hero-status-row">
+            <div class="hero-badge">
+              <span class="ping-indicator" aria-hidden="true"></span>
+              <span>Disponível para Oportunidades</span>
+            </div>
+
+            <!-- Interruptor de Circuito / Chave de Energia -->
+            <div class="circuit-switch-control" role="group" aria-label="Controle de Energia dos Circuitos">
+              <span class="circuit-led" id="circuit-led" aria-hidden="true"></span>
+              <span class="circuit-switch-label">CIRCUITO: <strong id="circuit-state-text">ENERGIZADO</strong></span>
+              <button type="button" id="circuit-toggle-btn" class="circuit-rocker-btn active" role="switch" aria-checked="true" aria-label="Ligar ou desligar trilhas de circuito" title="Ligar / Desligar trilhas de circuito">
+                <span class="rocker-lever"></span>
+              </button>
+            </div>
+          </div>
+
+          <h1 id="hero-title" class="hero-main-title">
+            Roberto <span class="gradient-text">Carlos</span>
+          </h1>
+
+          <div class="hero-role">
+            &gt; Back-End Developer &bull; Python, Automações & Docker
+          </div>
+
+          <p class="hero-pitch">
+            Desenvolvedor com foco em transformar processos manuais em rotinas automatizadas eficientes e construir aplicações escaláveis. Especializado em <strong>Python (Django, Flask e Bots)</strong>, conteinerização com <strong>Docker</strong> e modelagem sólida de dados em <strong>MySQL</strong>.
+          </p>
+
+          <div class="hero-actions">
+            <a href="#projetos" class="btn btn-cyber">
+              <span>Ver Projetos</span>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12 5 19 12 12 19"></polyline>
+              </svg>
+            </a>
+            <a href="https://wa.me/5516997419127?text=Ol%C3%A1%20Roberto,%20vi%20seu%20portf%C3%B3lio%20e%20gostaria%20de%20conversar%20sobre%20uma%20vaga!" target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.312.045-.693.078-2.285-.583-1.619-.672-2.73-2.316-2.812-2.425-.083-.11-1.025-1.365-1.025-2.603 0-1.238.647-1.849.878-2.102.23-.254.5-.317.667-.317.167 0 .333.002.478.01.153.007.358-.058.56.425.209.499.712 1.737.774 1.862.063.126.104.272.021.436-.083.164-.125.267-.247.41-.122.144-.257.322-.367.432-.122.123-.25.257-.107.502.143.245.635 1.047 1.364 1.696.938.835 1.728 1.093 1.973 1.215.245.122.389.108.533-.058.144-.167.616-.718.78-.965.164-.247.329-.206.551-.123.222.083 1.41.665 1.652.787.243.122.404.182.464.285.061.103.061.597-.083 1.002z"/>
+              </svg>
+              <span>Conversar no WhatsApp</span>
+            </a>
+          </div>
+
+          <!-- Redes Sociais -->
+          <div class="social-strip">
+            <a href="https://github.com/Robertoccj" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="GitHub de Roberto" title="GitHub">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
+              </svg>
+            </a>
+            <a href="https://wa.me/5516997419127" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="WhatsApp" title="WhatsApp">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771z"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Terminal Interativo: Simulador de Bot em Ação -->
+        <div class="bot-simulator" aria-label="Simulador interativo de automação com Python e Docker">
+          <div class="bot-topbar">
+            <div class="bot-controls" aria-hidden="true">
+              <span class="bot-circle bc-red"></span>
+              <span class="bot-circle bc-yellow"></span>
+              <span class="bot-circle bc-green"></span>
+            </div>
+            <div class="bot-filename">bot_automation.py &bull; Docker Container</div>
+            <div class="bot-actions-bar">
+              <button type="button" id="btn-run-bot" class="btn-sim-run" title="Executar rotina de demonstração">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                  <polygon points="5 3 19 12 5 21 5 3"></polygon>
+                </svg>
+                <span>Executar Bot</span>
+              </button>
+              <button type="button" id="btn-clear-bot" class="btn-sim-run" style="border-color: rgba(255,255,255,0.2); color: var(--text-dim);" title="Limpar console">
+                <span>Limpar</span>
+              </button>
+            </div>
+          </div>
+          <div id="bot-terminal-output" class="bot-output-terminal" role="log" aria-live="polite">
+            <div class="bot-line bl-cmd">$ python bot_monitor.py --daemon</div>
+            <div class="bot-line bl-info">[INFO] Ambiente Docker Compose inicializado (web + db_mysql).</div>
+            <div class="bot-line bl-success">[OK] Worker em segundo plano aguardando gatilho...</div>
+            <div class="bot-line bl-tag" style="margin-top: 0.5rem;">
+              &gt; Clique em "Executar Bot" acima para simular a rotina de automação!
+            </div>
+          </div>
+          <div class="bot-footer-stats">
+            <span>Container: worker_app:latest</span>
+            <span>Ambiente: Docker / Linux</span>
+            <span>Status: 100% Saudável</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Fita de Tecnologias -->
+    <div class="tech-ribbon" aria-label="Tecnologias principais">
+      <div class="container">
+        <div class="tech-ribbon-content">
+          <span class="tech-tag-item">🐍 Python</span>
+          <span class="tech-tag-item">🤖 Automações & Bots</span>
+          <span class="tech-tag-item" style="color: var(--neon-cyan);">🐳 Docker & Compose</span>
+          <span class="tech-tag-item">🟩 Django</span>
+          <span class="tech-tag-item">⚡ Flask APIs</span>
+          <span class="tech-tag-item">🐬 MySQL</span>
+          <span class="tech-tag-item">📦 SQLite</span>
+          <span class="tech-tag-item">🐧 Linux Bash</span>
+          <span class="tech-tag-item">🐙 Git & GitHub</span>
+          <span class="tech-tag-item">🎨 Tailwind CSS</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- 2. Sobre Mim (Bento Grid) -->
+    <section id="sobre" class="section" aria-labelledby="sobre-title">
+      <div class="container">
+        <div class="section-head">
+          <span class="section-tag">01 // Trajetória</span>
+          <h2 id="sobre-title" class="section-title">Sobre Mim</h2>
+          <p class="section-lead">
+            Raciocínio lógico focado em arquitetura limpa, automação de processos e confiabilidade técnica.
+          </p>
+        </div>
+
+        <div class="bento-grid">
+          <!-- Card de Apresentação -->
+          <div class="bento-card">
+            <h3>Perfil de Engenharia & Desenvolvimento</h3>
+            <p>
+              Sou desenvolvedor de software em formação no <strong>SENAC Araraquara</strong>, com forte direcionamento para o back-end, automações e integração de sistemas. Minha atuação é guiada pela vontade constante de entender como os sistemas funcionam a fundo, eliminando retrabalhos manuais e construindo soluções escaláveis.
+            </p>
+            <p>
+              Gosto de arquitetar rotinas de <strong>bots e automações em Python</strong> (coleta de dados, rotinas agendadas e disparo de notificações) e integrá-las a bancos de dados relacionais bem estruturados (<strong>MySQL e SQLite</strong>).
+            </p>
+            <p>
+              Com <strong>Docker e Docker Compose</strong>, asseguro que cada serviço, API e banco de dados suba de forma conteinerizada e padronizada, garantindo que o que roda na minha máquina seja exatamente o que roda em qualquer ambiente.
+            </p>
+
+            <div class="bento-mini-stats">
+              <div class="mini-stat-box">
+                <div class="ms-label">Localização</div>
+                <div class="ms-val">Araraquara, SP</div>
+              </div>
+              <div class="mini-stat-box">
+                <div class="ms-label">Formação</div>
+                <div class="ms-val">Técnico em TI (SENAC)</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card de Filosofia & Abordagem -->
+          <div class="bento-card" style="display: flex; flex-direction: column; justify-content: space-between;">
+            <div>
+              <h3>Como eu trabalho</h3>
+              <p>
+                Acredito que o bom código é aquele fácil de ler, seguro por padrão e testável. No desenvolvimento web, aplico proteções contra SQL Injection via ORM/consultas parametrizadas, proteção CSRF e controle granular de permissões (RBAC).
+              </p>
+              <p>
+                No front-end, priorizo o desenvolvimento <strong>Mobile-First</strong>, semântica limpa e alta performance auditada pelo Google Lighthouse.
+              </p>
+            </div>
+
+            <div style="background: rgba(16, 185, 129, 0.08); border: 1px solid rgba(16, 185, 129, 0.25); border-radius: 8px; padding: 1rem; margin-top: 1rem;">
+              <span style="font-family: var(--font-code); font-size: 0.8rem; color: var(--neon-emerald); font-weight: 600;">
+                ✓ Compromisso: Zero código improvisado, documentação clara e disciplina ágil (Scrum).
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. Habilidades Técnicas (Matrix Bento) -->
+    <section id="habilidades" class="section" aria-labelledby="habilidades-title">
+      <div class="container">
+        <div class="section-head">
+          <span class="section-tag">02 // Stack & Ferramentas</span>
+          <h2 id="habilidades-title" class="section-title">Habilidades Técnicas</h2>
+          <p class="section-lead">
+            Tecnologias dominadas na prática para criação de soluções back-end, automações e interfaces.
+          </p>
+        </div>
+
+        <div class="skills-matrix">
+          <!-- 1. Back-End -->
+          <div class="matrix-cell">
+            <div class="cell-icon-wrap" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="16 18 22 12 16 6"></polyline>
+                <polyline points="8 6 2 12 8 18"></polyline>
+              </svg>
+            </div>
+            <h3>Back-End & APIs</h3>
+            <p class="cell-desc">Regras de negócios e arquitetura</p>
+            <div class="tag-cloud">
+              <span class="matrix-tag accent-emerald">Python</span>
+              <span class="matrix-tag accent-emerald">Django (MVT/ORM)</span>
+              <span class="matrix-tag accent-emerald">Flask (REST APIs)</span>
+              <span class="matrix-tag">Java (POO)</span>
+              <span class="matrix-tag">Ambientes Virtuais (venv)</span>
+              <span class="matrix-tag">Tratamento de Exceções</span>
+            </div>
+          </div>
+
+          <!-- 2. Automações & Bots -->
+          <div class="matrix-cell">
+            <div class="cell-icon-wrap" style="color: var(--neon-cyan); background: rgba(6, 182, 212, 0.1);" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="3" y="11" width="18" height="10" rx="2"></rect>
+                <circle cx="12" cy="5" r="2"></circle>
+                <path d="M12 7v4"></path>
+                <line x1="8" y1="16" x2="8" y2="16"></line>
+                <line x1="16" y1="16" x2="16" y2="16"></line>
+              </svg>
+            </div>
+            <h3>Automações & Bots</h3>
+            <p class="cell-desc">Eliminação de tarefas manuais</p>
+            <div class="tag-cloud">
+              <span class="matrix-tag accent-cyan">Scripts de Automação</span>
+              <span class="matrix-tag accent-cyan">Web Scraping</span>
+              <span class="matrix-tag accent-cyan">Consumo de Webhooks</span>
+              <span class="matrix-tag">Rotinas Agendadas</span>
+              <span class="matrix-tag">Integração HTTP Requests</span>
+              <span class="matrix-tag">Parsing de JSON/Dados</span>
+            </div>
+          </div>
+
+          <!-- 3. DevOps & Docker -->
+          <div class="matrix-cell">
+            <div class="cell-icon-wrap" style="color: #38bdf8; background: rgba(56, 189, 248, 0.1);" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path>
+                <polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline>
+                <line x1="12" y1="22.08" x2="12" y2="12"></line>
+              </svg>
+            </div>
+            <h3>DevOps & Containers</h3>
+            <p class="cell-desc">Padronização e reprodutibilidade</p>
+            <div class="tag-cloud">
+              <span class="matrix-tag accent-cyan">Docker</span>
+              <span class="matrix-tag accent-cyan">Docker Compose</span>
+              <span class="matrix-tag accent-cyan">Dockerfile</span>
+              <span class="matrix-tag">Linux Bash</span>
+              <span class="matrix-tag">Git & GitHub</span>
+              <span class="matrix-tag">Isolamento de Redes/Volumes</span>
+            </div>
+          </div>
+
+          <!-- 4. Bancos de Dados -->
+          <div class="matrix-cell">
+            <div class="cell-icon-wrap" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <ellipse cx="12" cy="5" rx="9" ry="3"></ellipse>
+                <path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"></path>
+                <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"></path>
+              </svg>
+            </div>
+            <h3>Bancos de Dados</h3>
+            <p class="cell-desc">Modelagem relacional e queries</p>
+            <div class="tag-cloud">
+              <span class="matrix-tag accent-emerald">Modelagem MER / DER</span>
+              <span class="matrix-tag accent-emerald">MySQL</span>
+              <span class="matrix-tag">SQLite</span>
+              <span class="matrix-tag">Chaves PK / FK</span>
+              <span class="matrix-tag">Integridade Referencial</span>
+              <span class="matrix-tag">Consultas Otimizadas</span>
+            </div>
+          </div>
+
+          <!-- 5. Front-End & UX -->
+          <div class="matrix-cell">
+            <div class="cell-icon-wrap" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="2" y="3" width="20" height="14" rx="2"></rect>
+                <line x1="8" y1="21" x2="16" y2="21"></line>
+                <line x1="12" y1="17" x2="12" y2="21"></line>
+              </svg>
+            </div>
+            <h3>Front-End Responsivo</h3>
+            <p class="cell-desc">Interfaces rápidas e acessíveis</p>
+            <div class="tag-cloud">
+              <span class="matrix-tag accent-emerald">HTML5 Semântico</span>
+              <span class="matrix-tag accent-emerald">CSS3 Moderno</span>
+              <span class="matrix-tag accent-emerald">Tailwind CSS</span>
+              <span class="matrix-tag">JavaScript (ES6+)</span>
+              <span class="matrix-tag">Mobile-First</span>
+              <span class="matrix-tag">Prototipagem Figma</span>
+            </div>
+          </div>
+
+          <!-- 6. Engenharia & Segurança -->
+          <div class="matrix-cell">
+            <div class="cell-icon-wrap" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+              </svg>
+            </div>
+            <h3>Segurança & Métodos</h3>
+            <p class="cell-desc">Conformidade e agilidade</p>
+            <div class="tag-cloud">
+              <span class="matrix-tag accent-emerald">Prevenção SQL Injection</span>
+              <span class="matrix-tag accent-emerald">Proteção CSRF</span>
+              <span class="matrix-tag">Controle de Acesso RBAC</span>
+              <span class="matrix-tag">Scrum (Sprints, Dailies)</span>
+              <span class="matrix-tag">Google Lighthouse 100/100</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. Projetos em Destaque -->
+    <section id="projetos" class="section" aria-labelledby="projetos-title">
+      <div class="container">
+        <div class="section-head">
+          <span class="section-tag">03 // Código em Produção</span>
+          <h2 id="projetos-title" class="section-title">Projetos em Destaque</h2>
+          <p class="section-lead">
+            Aplicações reais demonstrando back-end, rotinas de bots, Docker e atenção à performance.
+          </p>
+        </div>
+
+        <!-- Filtros Rápidos -->
+        <div class="projects-filter-bar">
+          <button type="button" class="filter-btn active" data-filter="all">Todos os Projetos</button>
+          <button type="button" class="filter-btn" data-filter="bot">Automações & Bots</button>
+          <button type="button" class="filter-btn" data-filter="django">Web Apps & Django</button>
+          <button type="button" class="filter-btn" data-filter="api">APIs & Microsserviços</button>
+        </div>
+
+        <div class="projects-stack">
+          <!-- Projeto 01: Bot de Automação & Coleta -->
+          <article class="project-box" data-category="bot">
+            <div class="proj-text-area">
+              <div class="proj-meta-header">
+                <span class="proj-number">01</span>
+                <span class="proj-category-label">Automação & Processamento</span>
+              </div>
+              <h3 class="proj-title">Bot de Monitoramento & Coleta de Dados</h3>
+              <p class="proj-desc">
+                Serviço autônomo em Python programado para monitorar fluxos de dados, realizar web scraping estruturado, sanitizar informações e disparar notificações automatizadas via webhooks.
+              </p>
+              <ul class="proj-bullet-list">
+                <li>Empacotado em container <strong>Docker</strong> independente com execução contínua e segura.</li>
+                <li>Tratamento automático de falhas de conexão com retentativas inteligentes (backoff exponencial).</li>
+                <li>Persistência dos dados higienizados e geração de logs estruturados de auditoria.</li>
+              </ul>
+              <div class="proj-tags-list">
+                <span class="p-tag featured">Python</span>
+                <span class="p-tag featured">Docker</span>
+                <span class="p-tag">Requests / Scraping</span>
+                <span class="p-tag">Webhooks</span>
+                <span class="p-tag">Git</span>
+              </div>
+              <div>
+                <a href="https://github.com/Robertoccj" target="_blank" rel="noopener noreferrer" class="btn btn-outline">
+                  <span>Código no GitHub</span>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                    <polyline points="15 3 21 3 21 9"></polyline>
+                    <line x1="10" y1="14" x2="21" y2="3"></line>
+                  </svg>
+                </a>
+              </div>
+            </div>
+
+            <div class="proj-visual-area" aria-hidden="true">
+              <div class="pva-header">
+                <span>worker_bot.py</span>
+                <span style="color: var(--neon-emerald);">● Running</span>
+              </div>
+              <div class="pva-body">
+                <pre><code><span style="color: #c084fc;">import</span> requests, time, logging
+
+<span style="color: #64748b;"># Rotina de monitoramento conteinerizada</span>
+<span style="color: #c084fc;">def</span> <span style="color: #38bdf8;">run_crawler_pipeline</span>():
+    url = <span style="color: #10b981;">"https://api.service/metrics"</span>
+    resp = requests.get(url, timeout=5)
+    <span style="color: #c084fc;">if</span> resp.status_code == 200:
+        dataset = sanitize(resp.json())
+        save_to_mysql(dataset)
+        notify_webhook(len(dataset))
+        logging.info(<span style="color: #10b981;">"[OK] Rotina concluida"</span>)</code></pre>
+              </div>
+            </div>
+          </article>
+
+          <!-- Projeto 02: Sistema Web Django + Docker -->
+          <article class="project-box reversed" data-category="django">
+            <div class="proj-text-area">
+              <div class="proj-meta-header">
+                <span class="proj-number">02</span>
+                <span class="proj-category-label">Full Stack & Back-End</span>
+              </div>
+              <h3 class="proj-title">Sistema de Gestão & Painel Corporativo</h3>
+              <p class="proj-desc">
+                Aplicação corporativa com autenticação de usuários, níveis de acesso por grupo (RBAC), painel administrativo e controle completo de tarefas e permissões.
+              </p>
+              <ul class="proj-bullet-list">
+                <li>Ambiente totalmente conteinerizado com <strong>Docker Compose</strong> (Django + MySQL 8.0).</li>
+                <li>Modelagem relacional DER com integridade referencial estrita e ORM do Django.</li>
+                <li>Proteção contra vulnerabilidades OWASP (tokens CSRF e queries parametrizadas).</li>
+              </ul>
+              <div class="proj-tags-list">
+                <span class="p-tag featured">Python</span>
+                <span class="p-tag featured">Django</span>
+                <span class="p-tag featured">Docker Compose</span>
+                <span class="p-tag">MySQL</span>
+                <span class="p-tag">Tailwind CSS</span>
+              </div>
+              <div>
+                <a href="https://github.com/Robertoccj" target="_blank" rel="noopener noreferrer" class="btn btn-outline">
+                  <span>Código no GitHub</span>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                    <polyline points="15 3 21 3 21 9"></polyline>
+                    <line x1="10" y1="14" x2="21" y2="3"></line>
+                  </svg>
+                </a>
+              </div>
+            </div>
+
+            <div class="proj-visual-area" aria-hidden="true">
+              <div class="pva-header">
+                <span>docker-compose.yml</span>
+                <span style="color: var(--neon-cyan);">Docker 3.8</span>
+              </div>
+              <div class="pva-body">
+                <pre><code><span style="color: #c084fc;">services:</span>
+  <span style="color: #38bdf8;">web:</span>
+    <span style="color: #64748b;">build: .</span>
+    <span style="color: #64748b;">command: python manage.py runserver</span>
+    <span style="color: #64748b;">ports: ["8000:8000"]</span>
+    <span style="color: #64748b;">depends_on: [db]</span>
+  <span style="color: #38bdf8;">db:</span>
+    <span style="color: #64748b;">image: mysql:8.0</span>
+    <span style="color: #64748b;">ports: ["3306:3306"]</span></code></pre>
+              </div>
+            </div>
+          </article>
+
+          <!-- Projeto 03: API Flask -->
+          <article class="project-box" data-category="api">
+            <div class="proj-text-area">
+              <div class="proj-meta-header">
+                <span class="proj-number">03</span>
+                <span class="proj-category-label">Microsserviços & Integração</span>
+              </div>
+              <h3 class="proj-title">API RESTful de Serviços & Catálogo</h3>
+              <p class="proj-desc">
+                Microsserviço back-end leve e de alta resposta construído em Flask para integração entre sistemas e fornecimento de dados em formato JSON padronizado.
+              </p>
+              <ul class="proj-bullet-list">
+                <li>Roteamento RESTful com operações de CRUD (GET, POST, PUT, DELETE).</li>
+                <li>Validação estrita de payload de entrada e tratamento customizado de exceções HTTP.</li>
+                <li>Isolamento de dependências via <code>venv</code> e documentação das rotas.</li>
+              </ul>
+              <div class="proj-tags-list">
+                <span class="p-tag featured">Python</span>
+                <span class="p-tag featured">Flask</span>
+                <span class="p-tag">REST APIs</span>
+                <span class="p-tag">SQLite</span>
+                <span class="p-tag">JSON</span>
+              </div>
+              <div>
+                <a href="https://github.com/Robertoccj" target="_blank" rel="noopener noreferrer" class="btn btn-outline">
+                  <span>Código no GitHub</span>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                    <polyline points="15 3 21 3 21 9"></polyline>
+                    <line x1="10" y1="14" x2="21" y2="3"></line>
+                  </svg>
+                </a>
+              </div>
+            </div>
+
+            <div class="proj-visual-area" aria-hidden="true">
+              <div class="pva-header">
+                <span>api_endpoint.json</span>
+                <span style="color: #4ade80;">200 OK</span>
+              </div>
+              <div class="pva-body">
+                <pre><code>{
+  <span style="color: #38bdf8;">"status"</span>: <span style="color: #10b981;">200</span>,
+  <span style="color: #38bdf8;">"endpoint"</span>: <span style="color: #10b981;">"/api/v1/services"</span>,
+  <span style="color: #38bdf8;">"payload"</span>: {
+    <span style="color: #38bdf8;">"developer"</span>: <span style="color: #10b981;">"Roberto Carlos"</span>,
+    <span style="color: #38bdf8;">"focus"</span>: [<span style="color: #10b981;">"Back-End"</span>, <span style="color: #10b981;">"Bots"</span>, <span style="color: #10b981;">"Docker"</span>]
+  }
+}</code></pre>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. Pilares de Engenharia & Diferenciais -->
+    <section id="diferenciais" class="section" aria-labelledby="diferenciais-title">
+      <div class="container">
+        <div class="section-head">
+          <span class="section-tag">04 // Diferenciais</span>
+          <h2 id="diferenciais-title" class="section-title">Pilares de Engenharia</h2>
+          <p class="section-lead">
+            Postura técnica, qualidade e valor entregue no dia a dia da equipe de tecnologia.
+          </p>
+        </div>
+
+        <div class="pillars-grid">
+          <div class="pillar-box">
+            <div class="pillar-icon" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="2" y="2" width="20" height="8" rx="2"></rect>
+                <rect x="2" y="14" width="20" height="8" rx="2"></rect>
+                <line x1="6" y1="6" x2="6.01" y2="6"></line>
+                <line x1="6" y1="18" x2="6.01" y2="18"></line>
+              </svg>
+            </div>
+            <h4>Ambientes com Docker</h4>
+            <p>
+              Criação de Dockerfile e docker-compose.yml para subir aplicação, banco e workers com 1 comando.
+            </p>
+          </div>
+
+          <div class="pillar-box">
+            <div class="pillar-icon" style="color: var(--neon-cyan); background: rgba(6, 182, 212, 0.1);" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+              </svg>
+            </div>
+            <h4>Automação Inteligente</h4>
+            <p>
+              Foco em automatizar processos manuais repetitivos com scripts Python, liberando tempo da equipe.
+            </p>
+          </div>
+
+          <div class="pillar-box">
+            <div class="pillar-icon" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+              </svg>
+            </div>
+            <h4>Segurança OWASP</h4>
+            <p>
+              Prevenção consciente contra SQL Injection via ORM/consultas parametrizadas e tokens de segurança CSRF.
+            </p>
+          </div>
+
+          <div class="pillar-box">
+            <div class="pillar-icon" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                <circle cx="9" cy="7" r="4"></circle>
+                <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+              </svg>
+            </div>
+            <h4>Metodologias Ágeis</h4>
+            <p>
+              Familiaridade com sprints do Scrum, dailies, commits semânticos no Git e documentação de código.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. Contato & Conexão Direta -->
+    <section id="contato" class="section" aria-labelledby="contato-title">
+      <div class="container">
+        <div class="section-head">
+          <span class="section-tag">05 // Conexão</span>
+          <h2 id="contato-title" class="section-title">Contato Direto</h2>
+          <p class="section-lead">
+            Estou disponível para entrevistas e oportunidades como desenvolvedor júnior ou estágio.
+          </p>
+        </div>
+
+        <div class="contact-hub">
+          <div class="contact-card">
+            <h3>Canais de Comunicação</h3>
+            <p>Copie os dados com um clique ou abra a conversa diretamente:</p>
+
+            <div class="contact-row-list">
+              <!-- WhatsApp -->
+              <div class="contact-row-item">
+                <div class="cri-left">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                    <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771z"/>
+                  </svg>
+                  <div>
+                    <div class="cri-title">WhatsApp / Telefone</div>
+                    <div class="cri-val">+55 (16) 99741-9127</div>
+                  </div>
+                </div>
+                <button type="button" class="btn-clip" data-copy="+5516997419127">Copiar</button>
+              </div>
+
+              <!-- GitHub -->
+              <div class="contact-row-item">
+                <div class="cri-left">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                    <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
+                  </svg>
+                  <div>
+                    <div class="cri-title">GitHub</div>
+                    <div class="cri-val">github.com/Robertoccj</div>
+                  </div>
+                </div>
+                <a href="https://github.com/Robertoccj" target="_blank" rel="noopener noreferrer" class="btn-clip" style="text-decoration: none;">Acessar</a>
+              </div>
+
+              <!-- Localização -->
+              <div class="contact-row-item">
+                <div class="cri-left">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                    <circle cx="12" cy="10" r="3"></circle>
+                  </svg>
+                  <div>
+                    <div class="cri-title">Base</div>
+                    <div class="cri-val">Araraquara, São Paulo - Brasil</div>
+                  </div>
+                </div>
+                <span class="btn-clip" style="border: none; background: transparent; color: var(--neon-emerald);">SP</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="contact-card" style="display: flex; flex-direction: column; justify-content: space-between;">
+            <div>
+              <h3>Falar com Roberto</h3>
+              <p>Envie uma mensagem direta no WhatsApp para agendarmos uma entrevista:</p>
+              <a href="https://wa.me/5516997419127?text=Ol%C3%A1%20Roberto,%20vi%20seu%20portf%C3%B3lio%20e%20gostaria%20de%20agendar%20uma%20conversa!" target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp" style="width: 100%; padding: 1rem; font-size: 1.05rem;">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                  <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771z"/>
+                </svg>
+                <span>Chamar no WhatsApp</span>
+              </a>
+            </div>
+
+            <div style="border-top: 1px solid var(--border-subtle); padding-top: 1.25rem; margin-top: 1.5rem;">
+              <button type="button" class="btn btn-outline btn-print" style="width: 100%;">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <polyline points="6 9 6 2 18 2 18 9"></polyline>
+                  <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path>
+                  <rect x="6" y="14" width="12" height="8"></rect>
+                </svg>
+                <span>Imprimir Currículo ou Salvar PDF</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Rodapé -->
+  <footer class="footer" role="contentinfo">
+    <div class="container footer-inner">
+      <div>
+        <p>© 2026 Roberto Carlos Correa Junior. Todos os direitos reservados.</p>
+        <p style="font-size: 0.8rem; color: var(--text-dim); margin-top: 0.25rem;">
+          Construído com HTML5 Semântico, CSS3 Moderno e Vanilla JS. Otimizado para W3C e Google Lighthouse.
+        </p>
+      </div>
+      <div>
+        <a href="#inicio" class="back-top-link">
+          <span>&uarr; Voltar ao topo</span>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="./assets/js/main.js"></script>
+</body>
 </html>
