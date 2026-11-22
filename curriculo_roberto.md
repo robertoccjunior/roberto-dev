@@ -6,7 +6,7 @@
 - **GitHub:** [github.com/Robertoccj](https://github.com/Robertoccj)
 - **E-mail:** [robertoccjunior@exemplo.com]
 - **LinkedIn:** [Perfil LinkedIn - em atualização]
-- **Portfólio Online:** [robertoccj.github.io/deploy_curriculo](https://robertoccj.github.io/deploy_curriculo/)
+- **Portfólio Online:** [robertoccjunior.github.io/roberto-dev](https://robertoccjunior.github.io/roberto-dev/)
 
 ---
 
@@ -79,7 +79,7 @@ Conhecimento prático do ciclo de desenvolvimento de software (SDLC), autentica�
 - **Descrição:** Plataforma autoral estática de alta velocidade para apresentação técnica com simulação interativa de deploy e modo escuro/claro nativo.
 - **Tecnologias:** HTML5 Semântico, CSS3 Moderno, JavaScript Vanilla, GitHub Pages.
 - **Destaques:** 100/100 em performance no Lighthouse, dados estruturados Schema.org e folha de estilo para impressão direta em PDF.
-- **Links:** [Repositório no GitHub](https://github.com/Robertoccj/deploy_curriculo) • [Ver no Ar](https://robertoccj.github.io/deploy_curriculo/)
+- **Links:** [Repositório no GitHub](https://github.com/robertoccjunior/roberto-dev) • [Ver no Ar](https://robertoccjunior.github.io/roberto-dev/)
 
 ---
 
