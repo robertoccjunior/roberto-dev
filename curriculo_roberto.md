@@ -22,9 +22,10 @@ Conhecimento prático do ciclo de desenvolvimento de software (SDLC), autentica�
 
 ### 1. Back-End & Automação
 - **Linguagens:** Python (Aplicações web, scripts e automações), Java (Fundamentos de POO).
-- **Frameworks Web:** 
+- **Frameworks & Servidores Web:** 
   - **Django:** Arquitetura MVT, Django ORM, autenticação e rotas.
-  - **Flask:** Microsserviços e desenvolvimento ágil de APIs REST.
+  - **Flask:** Microsserviços, aplicações em camadas e APIs REST.
+  - **Gunicorn:** Servidor WSGI para aplicações Python em produção.
 - **Automação & Bots:**
   - Criação de scripts para automação de tarefas repetitivas, rotinas agendadas e processamento de dados.
   - Consumo de webhooks, integração com APIs de terceiros e requisições HTTP (`requests`).
@@ -33,10 +34,8 @@ Conhecimento prático do ciclo de desenvolvimento de software (SDLC), autentica�
 
 ### 2. Cloud AWS, Hospedagem & Infraestrutura
 - **AWS (Amazon Web Services) & Hospedagem:** Publicação de aplicações web em nuvem em ambiente de produção.
-- **Domínios, DNS & SSL:** Registro e apontamento de domínios personalizados, registros DNS e configuração de HTTPS/SSL.
-- **Docker & Docker Compose:**
-  - Criação e manutenção de `Dockerfile` para conteinerização de aplicações Python.
-  - Orquestração de múltiplos serviços, gerenciamento de containers, imagens, redes locais e volumes persistentes.
+- **Redes, Domínios, DNS & SSL:** Protocolos TCP/IP, HTTP/HTTPS, registro e apontamento de domínios personalizados, registros DNS e configuração de certificados SSL.
+- **CI/CD & Docker:** `Dockerfile`, `docker-compose.yml` e pipelines com **GitHub Actions**.
 - **Sistemas & Terminal:** Uso diário de linha de comando em Linux (Bash) e Windows (PowerShell).
 - **Controle de Versão:** Git e GitHub (branches, commits padronizados, resolução de conflitos e GitHub Pages).
 
@@ -46,14 +45,15 @@ Conhecimento prático do ciclo de desenvolvimento de software (SDLC), autentica�
   - **MySQL:** Criação de tabelas, consultas relacionais e integração com ORM.
   - **SQLite:** Persistência rápida para testes e protótipos de microsserviços.
 
-### 4. Front-End & Interfaces
-- **Tecnologias:** HTML5 semântico, CSS3 moderno, JavaScript (ES6+), **Tailwind CSS**.
+### 4. Front-End, Interfaces & E-commerce
+- **Tecnologias:** HTML5 semântico, CSS3 moderno, JavaScript (ES6+), **Tailwind CSS**, **WooCommerce**.
 - **Metodologia:** Design responsivo Mobile-First, semântica acessível e prototipagem no Figma.
 
-### 5. Engenharia de Software & Segurança
+### 5. Engenharia, IDEs, Agentes de IA & Segurança
+- **IDEs & Fluxo com IA:** **VS Code**, **IntelliJ IDEA** e desenvolvimento assistido por **Agentes de IA (Antigravity, Claude Code)** com revisão arquitetural e auditoria de código.
+- **Qualidade & Testes:** Suítes de testes automatizados (`unittest`), padrões W3C, performance e métricas Google Lighthouse.
 - **Segurança da Informação:** Validação e sanitização de dados, proteção ativa contra SQL Injection e CSRF, controle de acesso (RBAC).
 - **Metodologias Ágeis:** Scrum (sprints, dailies e backlog), especificação de Requisitos Funcionais (RF) e Casos de Uso (UML).
-- **Qualidade:** Padrões W3C, performance e métricas Google Lighthouse.
 
 ---
 
@@ -66,6 +66,7 @@ Conhecimento prático do ciclo de desenvolvimento de software (SDLC), autentica�
   - Autenticação segura (`scrypt` + salt, sessão `HttpOnly`/`SameSite`), cadastro 18+, Termo Legal e Direito ao Esquecimento.
   - Autocomplete nacional em memória dos 5.570 municípios do IBGE (`<100ms`), filtro heurístico antiofensa e agregador de notícias RSS/Atom com cache de 15 minutos.
   - Rede social cidadã (curtidas e ranking), moderação `/admin`, suíte com 20 testes automatizados (`unittest`) e Lighthouse 98–100 (WCAG AAA).
+- **Links:** [Acessar Demo ao Vivo](https://projeto-cu6w.onrender.com/home) • [Repositório no GitHub](https://github.com/robertoccjunior/protejaja)
 
 ### 2. WebP3 & Sites de Alta Performance (SEO & Lighthouse 100)
 - **Descrição:** Desenvolvimento de sites profissionais, páginas de marca e portfólios ultrarrápidos focados em imersão visual, conversão, SEO local/orgânico e pontuação máxima no Google Lighthouse (ex.: `webp3.com.br`).
